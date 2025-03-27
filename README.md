@@ -1,31 +1,4 @@
-# Welcome to [Slidev](https://github.com/slidevjs/slidev)!
-
-To start the slide show:
-
-- `pnpm install`
-- `pnpm dev`
-- visit <http://localhost:3030>
-
-Edit the [slides.md](./slides.md) to see the changes.
-
-Learn more about Slidev at the [documentation](https://sli.dev/).
-
----
-
-**その他**
-
-これ参考にしよう：
-* スライド: https://sli.dev/demo/starter/1
-* コード: https://github.com/slidevjs/slidev/blob/main/demo/starter/slides.md
-
-* PDF吐き出すときは
-```
-pnpm export --per-slide
-```
-じゃないとページ番号がバグる．
-（ここにもっと情報あるかも：https://sli.dev/features/global-layers ）
-
-## シラバス
+# シラバス
 
 **制作方針**
 
@@ -48,3 +21,28 @@ pnpm export --per-slide
 ## 最適化
 
 ## アルゴリズム
+
+---
+
+## コンパイル周りの補足
+
+To start the slide show:
+
+- `pnpm install`
+- マルコフ決定過程の導入：`pnpm dev slides/DecisionMakingOverview`
+- visit <http://localhost:3030>
+
+---
+
+## その他注意
+
+これ参考にしよう：
+* スライド: https://sli.dev/demo/starter/1
+* コード: https://github.com/slidevjs/slidev/blob/main/demo/starter/slides.md
+
+* PDF吐き出すときは
+```
+pnpm export --per-slide
+```
+じゃないとページ番号がバグる．
+（ここにもっと情報あるかも：https://sli.dev/features/global-layers ）
