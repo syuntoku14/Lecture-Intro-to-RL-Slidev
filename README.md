@@ -30,7 +30,7 @@ To start the slide show:
 
 ## Github Pagesにビルド
 
-- `pnpm build --out docs`
+- `pnpm build --base /Lecture-Intro-to-RL-Slidev --out docs`
 
 ---
 
