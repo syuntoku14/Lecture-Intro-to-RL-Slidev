@@ -4,6 +4,7 @@ highlighter: shiki
 transition: slide-left
 layout: section
 class: 'text-center'
+lineNumbers: true
 ---
 
 # マルコフ決定過程を学ぶモチベ
@@ -189,8 +190,6 @@ layout: default
 以降はMarkov Decision Processを略して**MDP**と呼ぶ
 
 * 概要：意思決定の流れをシンプルに記述した数理モデルのこと．
-* モチベ：最適化問題として，効率的に意思決定ルールを計算できる点で強力．
-  * 逆に適切な定式化がなければ，効率的な意思決定ルールの計算は難しい（他講義で学ぶ）
 
 <v-click>
 <div style="border: 2px solid #000; padding: 10px; margin-top: 20px; background-color: #ffffe0;">
@@ -207,6 +206,8 @@ $$
 \end{aligned}
 $$
 
+ここで，$\Delta(\mathcal{S})$は$\mathcal{S}$上の確率分布の集合を表す．
+
 </div>
 
 <div style="border: 2px solid #000; padding: 10px; margin-top: 20px;">
@@ -219,4 +220,14 @@ $$
 ---
 
 ## MDPを使った意思決定の流れ
+
+<br>
+
+**用語**
+* 意思決定者のことを**エージェント**と呼ぶ．
+* エージェントを取り巻く問題設定を**環境**と呼ぶ．
+  * ⚠️ 「エージェント」と「環境」は厳密な定義ではない．
+* 意思決定のルールを**方策**と呼ぶ．定義は後述．
+
+<br>
 
