@@ -28,6 +28,10 @@ To start the slide show:
 - マルコフ決定過程の導入：`pnpm dev slides/DecisionMakingOverview`
 - visit <http://localhost:3030>
 
+## Github Pagesにビルド
+
+- `pnpm build --out docs`
+
 ---
 
 ## その他注意
