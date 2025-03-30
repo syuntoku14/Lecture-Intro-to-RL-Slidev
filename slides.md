@@ -144,7 +144,7 @@ def recommend_movie(movie_history):
 
 * 多クラス分類問題 （他講義で説明）
 * システムの制御 （制御工学の線形二次レギュレータなど．他講義で説明）
-* ボートフォリオ最適化問題 <span style="font-size: 70%;">[Bäuerle+, 2011]</span>
+* ポートフォリオ最適化問題 <span style="font-size: 70%;">[Bäuerle+, 2011]</span>
 * 高速道路の舗装問題 <span style="font-size: 70%;">[Puterman+, 1994]</span>
 * テレビゲーム・囲碁・将棋
 * 対話システム （ChatGPTとか）
@@ -221,13 +221,76 @@ $$
 
 ## MDPを使った意思決定の流れ
 
-<br>
 
-**用語**
 * 意思決定者のことを**エージェント**と呼ぶ．
-* エージェントを取り巻く問題設定を**環境**と呼ぶ．
+* エージェントを取り巻く問題設定を**環境**と呼ぶ．（MDPのことを環境と呼ぶこともある）
   * ⚠️ 「エージェント」と「環境」は厳密な定義ではない．
-* 意思決定のルールを**方策**と呼ぶ．定義は後述．
+* 意思決定のルールを**方策**と呼ぶ．定義は色々ある（後述）．\
+  ↓の図は定常方策のときの意思決定の流れ（方策 $\pi: \mathcal{S} \to \Delta(\mathcal{A})$）
 
 <br>
+
+
+<figure style="position: absolute; bottom: 50px; left: 80px; width: 130px; text-align: center;">
+  <img src="./figures/space_kasei_tansa.png">
+  <figcaption style="text-align: center; position: absolute; top: -20px; left: 10px;">エージェント</figcaption>
+  <figcaption style="text-align: center; position: absolute; bottom: -30px; left: 0px; width: 150px; font-size: 0.8em;"> 
+  
+  初期状態 $s_1 \in \mathcal{S}$ 
+  </figcaption>
+</figure>
+
+<figure style="position: absolute; bottom: 130px; left: 400px; width: 100px; text-align: center;">
+  <img src="./figures/ishi_stone.png">
+  <img src="./figures/space_kasei_tansa.png" style="position: absolute; bottom: 0px; left: 50px; width: 100px;" >
+  <figcaption style="position: absolute; top: 70px; left: -70px; width: 300px; text-align: center; font-size: 0.8em;">
+  
+  状態 $s_2 \sim P(\cdot \mid s_1, a_1)$ 
+  </figcaption>
+</figure>
+
+<Arrow x1="200" y1="450" x2="400" y2="410" />
+<div style="position: absolute; bottom: 130px; left: 220px; text-align: center; font-size: 0.8em;">
+
+  行動 $a_1 \sim \pi(\cdot \mid s_1)$\
+  報酬 $r_1 = r(s_1, a_1)$
+
+</div>
+
+<figure style="position: absolute; bottom: 50px; left: 750px; width: 80px; text-align: center;">
+  <img src="./figures/sabaku.png">
+  <img src="./figures/space_kasei_tansa.png" style="position: absolute; bottom: 0px; left: 50px; width: 100px;" >
+  <figcaption style="position: absolute; top: 60px; left: -20px; width: 180px; text-align: center;font-size: 0.8em;">
+  
+  状態 $s_3 \sim P(\cdot \mid s_2, a_2)$ 
+  </figcaption>
+</figure>
+
+<Arrow x1="540" y1="410" x2="740" y2="450" />
+<div style="position: absolute; bottom: 130px; left: 580px; text-align: center; font-size: 14px;">
+
+  行動 $a_2 \sim \pi(\cdot \mid s_2)$\
+  報酬 $r_2 = r(s_2, a_2)$
+
+</div>
+
+<Arrow x1="880" y1="470" x2="1040" y2="400" />
+
+<div style="position: absolute; top: 50%; transform: translateY(-50%); width: 800px; padding: 0px; border: 2px solid #000; background-color: #ffffe0; text-align: center; font-size: 14px;">
+
+  MDPでは，次状態の遷移が直前の状態行動のみに依存している（$s_{t+1} \sim P(\cdot \mid s_t, a_t)$）．この性質をマルコフ性と呼ぶ．
+</div>
+
+
+---
+
+## MDPの何が嬉しいのか？
+
+🤔 < 現実世界ってMDPじゃなくない？\
+　 　例えば企業で数ヶ月前の意思決定が今月反映される場合，月ごとにはマルコフ性成り立たない…\
+　 　表現できない場合もありそうだし，役に立たないのでは？
+
+👨‍🏫 < 確かにMDPの適用が非自明な場合もあるけど，大抵の場合は工夫でなんとかなるよ．\
+　 　マルコフ性は設計者が無理やり作るもの．MDPにできれば，後で学ぶ強力なアルゴリズムが使える．
+
 
