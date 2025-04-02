@@ -43,7 +43,7 @@ layout: default
 <br>
 
 <div style="border: 2px solid #000; padding: 10px; margin-top: 20px; background-color: #ffffe0;">
-良い意思決定はサービスの質を向上させる．良い意思決定をするにはどうすればよいだろう？ 🤔
+良い意思決定はサービスの質を向上させる．「最適な」意思決定をするにはどうすればよいだろう？ 🤔
 </div>
 
 
@@ -69,15 +69,13 @@ layout: default
 </div>
 
 <br>
-<br>
 
 <v-click>
 
 <div style="border: 2px solid #000; padding: 10px; margin-top: 20px; background-color: #ffffe0;">
 
-* 講義では「短期と長期，どちらを優先するべきか？(what)」は学ばない．サービスの運営者次第．\
-（講義終盤で扱うかも）
-* 講義では **「意思決定のルールをどうやって設計するのか？(how)」** を扱う．
+* 🤔 どっちのルールが良い？何が最適なルール？**（What）**
+* 🤔 そもそも，どうやって最適なルールを見つける？**（How）**
 
 </div>
 
@@ -119,8 +117,8 @@ def recommend_movie(movie_history):
 
 <div style="border: 2px solid #000; padding: 10px; margin-top: 20px; background-color: #ffffe0;">
 
-ふわふわした要件では，意思決定のルールを設計するのは難しい．（🤔 そもそも短期と長期って何？）\
-💡そこで，**マルコフ決定過程**を使って意思決定問題を定式化＆意思決定のルールを計算しよう．
+ふわふわした要件では，意思決定のルールを最適化するのは難しい．（🤔 そもそも短期と長期って何？）\
+💡そこで，**マルコフ決定過程**を使って意思決定問題を定式化＆意思決定のルールを最適化しよう．
 </div>
 
 </v-click>
@@ -284,13 +282,52 @@ $$
 
 ---
 
-## MDPの何が嬉しいのか？
+## MDPを作る
 
 🤔 < 現実世界ってMDPじゃなくない？\
 　 　例えば企業で数ヶ月前の意思決定が今月反映される場合，月ごとにはマルコフ性成り立たない…\
 　 　表現できない場合もありそうだし，役に立たないのでは？
 
 👨‍🏫 < 確かにMDPの適用が非自明な場合もあるけど，大抵の場合は工夫でなんとかなるよ．\
-　 　マルコフ性は設計者が無理やり作るもの．MDPにできれば，後で学ぶ強力なアルゴリズムが使える．
+　 　マルコフ性は設計者が頑張って作るもの．MDPにできれば，後で学ぶ強力なアルゴリズムが使える．
 
+
+<figure style="position: absolute; top: 65%; left: 10%; transform: translateY(-50%); width: 110px; text-align: center;">
+  <img src="./figures/breakout.png" alt="Breakout Game">
+  <figcaption style="font-size: 0.9em; text-align: left; width: 330px; position: absolute; left: -50px;">
+
+  🤔画像を１つの状態として扱うと何が問題？\
+  → 状態（と行動）だけでは，次のボールの状態 $s_{t+1}$ が予測できない．
+  マルコフ性がない．
+  </figcaption>
+
+  <figcaption style="font-size: 0.9em; text-align: left; width: 100px; position: absolute; left: 120px; top: 40px;">
+
+  状態 $s_t$
+  </figcaption>
+</figure>
+
+
+<figure style="position: absolute; top: 60%; left: 60%; transform: translateY(-50%); width: 110px; text-align: center;">
+  <img src="./figures/breakout.png" alt="Breakout Game">
+  <img src="./figures/breakout.png" alt="Breakout Game" style="position: absolute; top: 10px; left: 10px;">
+  <img src="./figures/breakout.png" alt="Breakout Game" style="position: absolute; top: 20px; left: 20px;">
+  <figcaption style="font-size: 0.9em; text-align: left; width: 330px; position: absolute; left: -50px; top: 120%">
+
+  🙋直前の数フレームを含めて１つの状態とすれば，次のボールの状態 $s_{t+1}$ が確定．\
+  マルコフ性がある．<span style="font-size: 70%;">[Mnih+, 2015]</span>
+  </figcaption>
+
+  <figcaption style="font-size: 0.9em; text-align: left; width: 100px; position: absolute; left: 150px; top: 70px;">
+
+  状態 $s_t$
+  </figcaption>
+</figure>
+
+<!-- 引用元 -->
+<div style="font-size: 0.7em; text-align: left; position: absolute; bottom: 10px; left: 10px;">
+
+* [Mnih+, 2015] Human-level control through deep reinforcement learning
+
+</div>
 
