@@ -7,6 +7,42 @@ class: 'text-center'
 lineNumbers: true
 ---
 
+# （深層）強化学習までの道のり
+
+---
+
+## 講義の流れ
+<br>
+
+<div style="border: 2px solid #000; padding: 10px; margin: 10px auto; background-color: #f9f9f9;">
+
+**強化学習に入る前の基礎**：ここはまだ「学習」ではない．最適化．
+
+1. 問題設定：逐次意思決定問題とマルコフ決定過程について学ぶ
+2. マルコフ決定過程での最適化：マルコフ決定過程の性質や，最適化の方法を学ぶ
+
+</div>
+
+<br>
+
+<div style="border: 2px solid #000; padding: 10px; margin: 10px auto; background-color: #f9f9f9;">
+
+**ここから強化学習**：問題設定が大きくなり，何らかの近似が必要になる．
+
+1. サンプル近似：シミュレータと探索によるサンプル近似
+2. 関数近似：線形関数近似，深層学習による関数近似 （応用）
+
+</div>
+
+---
+theme: default
+highlighter: shiki
+transition: slide-left
+layout: section
+class: 'text-center'
+lineNumbers: true
+---
+
 # マルコフ決定過程を学ぶモチベ
 
 ---
